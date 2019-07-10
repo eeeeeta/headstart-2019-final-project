@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="imports">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/bluecove-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/dbusjava.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/ev3classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/ShefRobot.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
