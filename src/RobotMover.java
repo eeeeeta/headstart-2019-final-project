@@ -20,15 +20,14 @@ public class RobotMover {
     }
 
     /**
-     * Make a 90-degree turn, either right or left.
-     *
-     * @param right Whether to turn right or left.
+     * Run the spinny switchy thingy once, swapping the two blocks
+     * next to the robot.
      */
-    public static void turnNinetyDegrees(boolean right) {
-    }
+    public static void swap() {
 
+    }
     /**
-     * Detect the colour currently in front of the robot.
+     * Detect the colour currently next to the robot.
      * @return the detected colour
      */
     public static ColorSensor.Color detectColor() {

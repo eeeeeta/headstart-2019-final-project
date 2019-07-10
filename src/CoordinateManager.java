@@ -5,19 +5,21 @@ public class CoordinateManager {
     public static RobotMover mover = new RobotMover();
     // current x coordinate
     public static int x = 0;
-    // current y coordinate
-    public static int y = 0;
-    // current rotation from due North, in degrees clockwise
-    public static int rotation_degrees = 0;
 
     /**
      * Go to a given place on the coordinate grid.
      * @param go_x x coordinate to move to
-     * @param go_y y coordinate to move to
      */
-    public static void goTo(int go_x, int go_y) {
+    public static void goTo(int go_x) {
     }
 
+    /**
+     * Run the spinny switchy thingy once, swapping the two blocks
+     * next to the robot.
+     */
+    public static void swap() {
+        mover.swap();
+    }
     /**
      * Detect the colour currently in front of the robot.
      * @return the detected colour
