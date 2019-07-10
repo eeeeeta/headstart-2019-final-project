@@ -4,5 +4,6 @@
 import ShefRobot.*;
 
 public class MainRobot {
-
+    public static void main(String[] args) {
+    }
 }
