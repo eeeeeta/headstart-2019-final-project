@@ -25,39 +25,30 @@ public class Sorter {
         //temp variable to switch values
 
         int changes = 0;
-        ArrayList<int> switches = new ArrayList<int>();
+        ArrayList<Integer> switches = new ArrayList<Integer>();
 
         do {
+            System.out.println("Changes: " + changes);
             //compare
             //call switch blocks
             for (int i = 0; i<3; i++) {
-
+                changes = 0;
+                System.out.println("I=" + i);
                 if (blockOrder[0] > blockOrder[1]) {
                     switches.add(i);
-
+                    changes = changes + 1;
+                }
+            }
+            System.out.println("Changes: " + changes);
         } while (changes != 0);
 
-        /*
+        System.out.println("Output switches next");
 
-        while (changes == 0) {
-            int changes = 0; //changes made in one pass ie if no changes, sorted and break loop
-            int[] switches = new int[]; //keep list of changes needing to be physically made
+        //this loop isn't running
+        for (int i = 0; i<switches.size(); i++) {
+            System.out.println();
 
-            for (int i = 0; i<3; i++) {
-
-                if (blockOrder[0] > blockOrder[1]) {
-                    int temp = blockOrder[0];
-
-
-
-                }
-
-
-
-            }
         }
-    */
-
         //output is loop calling blockswitcher for each switch
     }
 
