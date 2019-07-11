@@ -24,7 +24,7 @@ public class ColourDetector {
         return ret;
     }
     private static int detectColour() throws Error {
-        ColorSensor.Color col = CoordinateManager.detectColor();
+        ColorSensor.Color col = RobotMover.detectColor();
         switch (col) {
             case RED:
                 return 3;
