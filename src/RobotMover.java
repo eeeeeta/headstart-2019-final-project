@@ -16,11 +16,11 @@ public class RobotMover {
         armMotor = robot.getLargeMotor(Motor.Port.B);
         spinMotor = robot.getMediumMotor(Motor.Port.C);
         sensor = robot.getColorSensor(Sensor.Port.S1);
-
+        driveMotor.setSpeed(50);
         spinMotor.setSpeed(100);
         armMotor.setSpeed(100);
-        armMotor.rotateTo(90);
         spinMotor.rotateTo(90);
+        armMotor.rotateTo(90);
     }
 
     /**

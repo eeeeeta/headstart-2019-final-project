@@ -12,16 +12,9 @@ public class MainRobot {
         try {
             Sorter test = new Sorter();
 
-            int[] currentLocations = {3, 2, 4, 1};
-            //where currently red yellow blue green
-            // has array [3,4,1,2]
-            //test.sortBlocks(currentLocations);
-            for (int i = 0; i < 3; i++) {
-                RobotMover.forward(35);
-                RobotMover.backward(35);
-            }
-            RobotMover.swap();
-            RobotMover.swap();
+            //int[] currentLocations = ColourDetector.detectColours();
+            int[] currentLocations = {4, 1, 3, 2};
+            test.sortBlocks(currentLocations);
         }
         catch (Error e) {
             System.err.println("Failed: " + e);
