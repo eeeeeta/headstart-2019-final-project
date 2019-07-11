@@ -1,10 +1,12 @@
 import ShefRobot.*;
+import lejos.utility.Delay;
 
 public class RobotMover {
     public static Robot robot;
     public static ColorSensor sensor;
     public static Motor driveMotor;
     public static Motor armMotor;
+    public static Motor spinMotor;
 
 
     public static double WHEEL_DIAMETER = 5.6;
@@ -12,7 +14,10 @@ public class RobotMover {
         robot = new Robot("G7");
         driveMotor = robot.getLargeMotor(Motor.Port.A);
         armMotor = robot.getLargeMotor(Motor.Port.B);
+        spinMotor = robot.getMediumMotor(Motor.Port.C);
         sensor = robot.getColorSensor(Sensor.Port.S1);
+
+        armMotor.rotateTo(90);
     }
 
     /**
@@ -50,7 +55,13 @@ public class RobotMover {
      * next to the robot.
      */
     public static void swap() {
-
+        armMotor.rotateTo(-90);
+        Delay.msDelay(2000);
+        spinMotor.rotateTo(270);
+        Delay.msDelay(2000);
+        spinMotor.rotateTo(-90);
+        Delay.msDelay(2000);
+        armMotor.rotateTo(90);
     }
     /**
      * Detect the colour currently next to the robot.
