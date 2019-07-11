@@ -1,5 +1,8 @@
 //sorter class implements bubble sort for the blocks and returns instructions for the roobot
 
+import java.util.ArrayList;
+
+
 public class Sorter {
     public static BlockSwitcher switcher = new BlockSwitcher();
 
@@ -21,18 +24,44 @@ public class Sorter {
         //in each loop compare item and item after
         //temp variable to switch values
 
-        while (true) {
-            int switches = 0;
+        int changes = 0;
+        ArrayList<int> switches = new ArrayList<int>();
+
+        do {
+            //compare
+            //call switch blocks
+            for (int i = 0; i<3; i++) {
+
+                if (blockOrder[0] > blockOrder[1]) {
+                    switches.add(i);
+
+        } while (changes != 0);
+
+        /*
+
+        while (changes == 0) {
+            int changes = 0; //changes made in one pass ie if no changes, sorted and break loop
+            int[] switches = new int[]; //keep list of changes needing to be physically made
 
             for (int i = 0; i<3; i++) {
 
+                if (blockOrder[0] > blockOrder[1]) {
+                    int temp = blockOrder[0];
+
+
+
+                }
 
 
 
             }
         }
-
+    */
 
         //output is loop calling blockswitcher for each switch
     }
+
+
+
+
 }
