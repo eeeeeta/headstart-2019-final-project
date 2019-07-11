@@ -6,6 +6,7 @@ import ShefRobot.*;
 public class MainRobot {
 
     public static void main(String[] args) {
+
         Sorter test = new Sorter();
 
         int[] currentLocations = {3,2,4,1};

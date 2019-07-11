@@ -21,7 +21,7 @@ public class CoordinateManager {
      * Go to a given place on the coordinate grid.
      * @param go_x x coordinate to move to
      */
-    public static int goTo(double newX) {
+    public static void goTo(double newX) {
         //receive new x value
         //compare current and new values
         //call either forward or backward
@@ -38,7 +38,7 @@ public class CoordinateManager {
     }
 
 
-    //COULD CALL THESE DIRECTLY FROM BLOCKSWITCHER
+    //COULD CALL THESE DIRECTLY FROM BLOCKSWITCHER  1
     /**
      * Run the spinny switchy thingy once, swapping the two blocks
      * next to the robot.
