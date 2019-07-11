@@ -6,6 +6,8 @@ public class RobotMover {
     public static Motor driveMotor;
     public static Motor armMotor;
 
+
+    public static double WHEEL_DIAMETER = 5.6;
     public static void init() {
         robot = new Robot("G7");
         driveMotor = robot.getLargeMotor(Motor.Port.A);
@@ -18,7 +20,16 @@ public class RobotMover {
      *
      * @param distance How many units to move forward by.
      */
-    public static void forward(int distance) {
+    public static void forward(double distance) {
+        double totalTachos = (360.0 * distance) / (Math.PI * WHEEL_DIAMETER);
+        double tachosTravelled=0 ;
+        driveMotor.resetTachoCount();
+        while (tachosTravelled<totalTachos){
+            driveMotor.forward();
+            tachosTravelled=tachosTravelled+(driveMotor.getTachoCount());
+        }
+
+
     }
 
     /**
@@ -26,8 +37,13 @@ public class RobotMover {
      *
      * @param distance How many units to move backward by.
      */
-    public static void backward(int distance) {
+    public static void backward(double distance) {
     }
+
+   /* private static double cmsToTachos(double cms) {
+        return (360.0 * cms) / (Math.PI * WHEEL_DIAMETER);
+    }
+    */
 
     /**
      * Run the spinny switchy thingy once, swapping the two blocks
