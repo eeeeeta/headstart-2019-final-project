@@ -7,14 +7,11 @@ public class MainRobot {
 
     public static void main(String[] args) {
         RobotMover.init();
-        Sorter test = new Sorter();
 
-        int[] currentLocations = {3,2,4,1};
-        //where currently red yellow blue green
-        // has array [3,4,1,2]
-
-        test.sortBlocks(currentLocations);
-
+        for(int i = 0; i < 10; i++) {
+            RobotMover.forward(30.6);
+            RobotMover.backward(30.6);
+        }
         RobotMover.robot.close();
     }
 }

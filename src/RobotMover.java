@@ -26,15 +26,7 @@ public class RobotMover {
      * @param distance How many units to move forward by.
      */
     public static void forward(double distance) {
-        double totalTachos = (360.0 * distance) / (Math.PI * WHEEL_DIAMETER);
-        double tachosTravelled=0 ;
-        driveMotor.resetTachoCount();
-        while (tachosTravelled<totalTachos){
-            driveMotor.forward();
-            tachosTravelled=tachosTravelled+(driveMotor.getTachoCount());
-        }
-
-
+        move(distance, true);
     }
 
     /**
@@ -43,12 +35,27 @@ public class RobotMover {
      * @param distance How many units to move backward by.
      */
     public static void backward(double distance) {
+        move(distance, false);
     }
 
-   /* private static double cmsToTachos(double cms) {
+    private static void move(double distance, boolean forward) {
+        double tachos = cmsToTachos(distance); //converts distance in cm into tachos
+        System.out.println("Going " + distance + "cm, which is " + tachos + " tachos");
+        driveMotor.resetTachoCount(); //set tacho count to zero again
+        driveMotor.forward(); //robot moves forward
+        if (!forward) { //if forward=false ie robot is moving backwards, tachos becomes negative (so robot moves in reverse)
+            tachos = -tachos;
+        }
+        driveMotor.rotateTo((int) tachos);
+        System.out.println("Apparently, we traveled " + driveMotor.getTachoCount() + " tachos");
+        driveMotor.stop();
+    }
+    private static double cmsToTachos(double cms) {
+        // There are pi * WHEEL_DIAMETER cms in 360 tachos.
+        // Therefore, 1 cm represents 360 / (pi * WHEEL_DIAMETER) tachos.
         return (360.0 * cms) / (Math.PI * WHEEL_DIAMETER);
     }
-    */
+
 
     /**
      * Run the spinny switchy thingy once, swapping the two blocks
