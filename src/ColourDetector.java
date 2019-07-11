@@ -1,3 +1,5 @@
+import ShefRobot.ColorSensor;
+
 /**
  * Detects the colours of all the blocks at the very start.
  */
@@ -11,6 +13,31 @@ public class ColourDetector {
      * @return
      */
     public static int[] detectColours() {
-        throw new Error(); // not yet implemented
+        System.out.println("** Detecting colours");
+        int[] ret = new int[4];
+        int current_pos = 0;
+        for (int i = 0; i < 4; i++) {
+            int col = detectColour();
+            System.out.println("* Detected block in position " + i + " as block #" + col);
+            ret[i] = col;
+            current_pos += coord.DISTANCE_BETWEEN_BLOCKS;
+            coord.goTo(current_pos);
+        }
+        return ret;
+    }
+    private static int detectColour() throws Error {
+        ColorSensor.Color col = coord.detectColor();
+        switch (col) {
+            case RED:
+                return 3;
+            case BLUE:
+                return 1;
+            case GREEN:
+                return 2;
+            case YELLOW:
+                return 4;
+            default:
+                throw new Error("Invalid or nonexistent colour");
+        }
     }
 }
