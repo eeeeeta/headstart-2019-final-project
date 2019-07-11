@@ -12,14 +12,14 @@ public class CoordinateManager {
     public static RobotMover mover = new RobotMover();
     // current x coordinate
     public static double x = 0;
-    public static int Blocks[] = new int[4];
-    public static int Mids[] = new int[3];
+    public static double Blocks[] = {0.0,10.1,20.2,30.3};
+    public static double Mids[] = {5.05,15.15,25.25};
 
-    public static double DISTANCE_BETWEEN_BLOCKS = 20;
+    public static double DISTANCE_BETWEEN_BLOCKS = 10.1;
 
     /**
      * Go to a given place on the coordinate grid.
-     * @param go_x x coordinate to move to
+     * @param newX x coordinate to move to
      */
     public static void goTo(double newX) {
         //receive new x value
@@ -36,7 +36,6 @@ public class CoordinateManager {
                 mover.backward(DistanceTo);
         }
     }
-
 
     //COULD CALL THESE DIRECTLY FROM BLOCKSWITCHER  1
     /**
