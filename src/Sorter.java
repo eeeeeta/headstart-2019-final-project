@@ -15,44 +15,46 @@ public class Sorter {
      * and it would then run bubblesort and issue commands to the
      * BlockSwitcher to switch the blocks back into [1, 2, 3, 4] order.
      *
-     * @param block_order Which order the blocks are in.
+     * @param blockOrder Which order the blocks are in.
      */
     public static void sortBlocks(int[] blockOrder) {
 
-        //take int array of unsorted numbers
-        //loop for every pass
-        //in each loop compare item and item after
-        //temp variable to switch values
 
-        //changes stores changes per pass,
-
+        //switches is dynamic array holding index of first block to be switches
+        //ie a switch will switch the block referenced and the block after
         ArrayList<Integer> switches = new ArrayList<Integer>();
-        int changes = 0;
 
+        //run a loop for every pass made
+        //ie would be n-1 for any possible length
+        //used 3 here for 4 possible blocks to sort
         for (int pass = 0; pass<3; pass++) {
 
-
-            changes = 0;
-            //compare
-            //call switch blocks
+            //loop to compare each block with the block after
+            //0 indexed so runs for i = 0,1,2
+            //no need to compare last block as has no block after
+            //makes every comparison (i) needed in one pass
             for (int i = 0; i<3; i++) {
 
+                //if blocks need to be switched
                 if (blockOrder[i] > blockOrder[i+1]) {
 
-                    System.out.println("i: " + i);
+                    //switch blocks
                     int temp = blockOrder[i];
                     blockOrder[i] = blockOrder[i+1];
                     blockOrder[i+1] = temp;
+
+                    //keep record of changes made
+                    //by appending index of first block
                     switches.add(i);
-                    changes = changes + 1;
                 }
             }
         }
 
-
-        //this loop isn't running
+        //loop to call blockswitcher class to switch blocks
+        //once running, will need to test no 0 indexing errors in loop
+        //but fairly confident is correct
         for (int i = 0; i<switches.size(); i++) {
-            System.out.println("i: " + i + " Switch" + switches.get(i) + " and " + (switches.get(i)+1));
+            switcher.switchBlocks(switches.get(i));
 
         }
         //output is loop calling blockswitcher for each switch
