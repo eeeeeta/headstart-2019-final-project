@@ -11,7 +11,7 @@ public class RobotMover {
 
     public static double WHEEL_DIAMETER = 5.6;
     public static void init() {
-        robot = new Robot("G7");
+        robot = new Robot("192.168.138.56");
         driveMotor = robot.getLargeMotor(Motor.Port.A);
         armMotor = robot.getLargeMotor(Motor.Port.B);
         spinMotor = robot.getMediumMotor(Motor.Port.C);

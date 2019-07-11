@@ -11,17 +11,34 @@ import ShefRobot.*;
 public class CoordinateManager {
     public static RobotMover mover = new RobotMover();
     // current x coordinate
-    public static int x = 0;
+    public static double x = 0;
+    public static int Blocks[] = new int[4];
+    public static int Mids[] = new int[3];
 
-    public static int DISTANCE_BETWEEN_BLOCKS = 20;
+    public static double DISTANCE_BETWEEN_BLOCKS = 20;
 
     /**
      * Go to a given place on the coordinate grid.
      * @param go_x x coordinate to move to
      */
-    public static void goTo(int go_x) {
+    public static void goTo(double newX) {
+        //receive new x value
+        //compare current and new values
+        //call either forward or backward
+        //change current x value
+
+        double DistanceTo = newX - x;
+        x = newX;
+           if (DistanceTo > 0) {
+               mover.forward(DistanceTo);
+            }
+            else if (DistanceTo < 0) {
+                mover.backward(DistanceTo);
+        }
     }
 
+
+    //COULD CALL THESE DIRECTLY FROM BLOCKSWITCHER  1
     /**
      * Run the spinny switchy thingy once, swapping the two blocks
      * next to the robot.
@@ -33,6 +50,8 @@ public class CoordinateManager {
      * Detect the colour currently in front of the robot.
      * @return the detected colour
      */
+
+    //DO NOT TOUCH
     public static ColorSensor.Color detectColor() {
         return mover.detectColor();
     }
