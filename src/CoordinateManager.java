@@ -36,22 +36,4 @@ public class CoordinateManager {
                 mover.backward(DistanceTo);
         }
     }
-
-    //COULD CALL THESE DIRECTLY FROM BLOCKSWITCHER  1
-    /**
-     * Run the spinny switchy thingy once, swapping the two blocks
-     * next to the robot.
-     */
-    public static void swap() {
-        mover.swap();
-    }
-    /**
-     * Detect the colour currently in front of the robot.
-     * @return the detected colour
-     */
-
-    //DO NOT TOUCH
-    public static ColorSensor.Color detectColor() {
-        return mover.detectColor();
-    }
 }
