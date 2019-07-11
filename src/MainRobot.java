@@ -6,7 +6,9 @@ import ShefRobot.*;
 public class MainRobot {
 
     public static void main(String[] args) {
+        System.out.println("Connecting to robot");
         RobotMover.init();
+        System.out.println("Connection established.");
         try {
             Sorter test = new Sorter();
 
@@ -14,6 +16,11 @@ public class MainRobot {
             //where currently red yellow blue green
             // has array [3,4,1,2]
             //test.sortBlocks(currentLocations);
+            for (int i = 0; i < 3; i++) {
+                RobotMover.forward(35);
+                RobotMover.backward(35);
+            }
+            RobotMover.swap();
             RobotMover.swap();
         }
         catch (Error e) {

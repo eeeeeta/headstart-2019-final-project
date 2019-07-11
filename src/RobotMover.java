@@ -58,12 +58,13 @@ public class RobotMover {
      * next to the robot.
      */
     public static void swap() {
+        System.out.println("Swapping!");
         armMotor.rotateTo(0);
         spinMotor.rotate(-270);
+        System.out.println("Restoring arm");
         spinMotor.rotate(90);
         armMotor.rotateTo(90);
         spinMotor.rotate(180);
-        spinMotor.rotateTo(90);
     }
     /**
      * Detect the colour currently next to the robot.
