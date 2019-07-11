@@ -5,12 +5,16 @@ public class RobotMover {
     public static ColorSensor sensor;
     public static Motor driveMotor;
     public static Motor armMotor;
+    public static Motor spinMotor;
 
     public static void init() {
         robot = new Robot("G7");
         driveMotor = robot.getLargeMotor(Motor.Port.A);
         armMotor = robot.getLargeMotor(Motor.Port.B);
+        spinMotor = robot.getMediumMotor(Motor.Port.C);
         sensor = robot.getColorSensor(Sensor.Port.S1);
+
+        armMotor.rotateTo(90);
     }
 
     /**
