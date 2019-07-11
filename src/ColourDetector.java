@@ -13,18 +13,16 @@ public class ColourDetector {
     public static int[] detectColours() {
         System.out.println("** Detecting colours");
         int[] ret = new int[4];
-        int current_pos = 0;
         for (int i = 0; i < 4; i++) {
+            CoordinateManager.goTo(CoordinateManager.Blocks[i]);
             int col = detectColour();
             System.out.println("* Detected block in position " + i + " as block #" + col);
             ret[i] = col;
-            current_pos += CoordinateManager.DISTANCE_BETWEEN_BLOCKS;
-            CoordinateManager.goTo(current_pos);
         }
         return ret;
     }
     private static int detectColour() throws Error {
-        ColorSensor.Color col = CoordinateManager.detectColor();
+        ColorSensor.Color col = RobotMover.detectColor();
         switch (col) {
             case RED:
                 return 3;

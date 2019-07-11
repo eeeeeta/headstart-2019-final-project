@@ -1,8 +1,6 @@
 //in charge of the logic behind the block switching
 
 public class BlockSwitcher {
-    public static CoordinateManager coord = new CoordinateManager();
-
     /**
      * Swaps the order of two blocks, the first of which is `blockA`.
      *
@@ -14,8 +12,8 @@ public class BlockSwitcher {
     public static void switchBlocks(int blockA) {
         System.out.println("** Switching block in position " + blockA + " with " + (blockA + 1));
         System.out.println("* Moving robot to between blocks");
-        coord.goTo((blockA * coord.DISTANCE_BETWEEN_BLOCKS) + (coord.DISTANCE_BETWEEN_BLOCKS / 2));
+        CoordinateManager.goTo(CoordinateManager.Mids[blockA]);
         System.out.println("* Switching");
-        coord.swap();
+        RobotMover.swap();
     }
 }
