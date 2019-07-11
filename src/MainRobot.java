@@ -6,7 +6,7 @@ import ShefRobot.*;
 public class MainRobot {
 
     public static void main(String[] args) {
-
+        RobotMover.init();
         Sorter test = new Sorter();
 
         int[] currentLocations = {3,2,4,1};
@@ -15,5 +15,6 @@ public class MainRobot {
 
         test.sortBlocks(currentLocations);
 
+        RobotMover.robot.close();
     }
 }
