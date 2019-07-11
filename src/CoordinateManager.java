@@ -1,10 +1,19 @@
-//keeps track of the position (co-ords) of the blocks and the robot
+/*
+# How the coordinate system works
+
+- The point on the robot where the switching arm is is where all measurements
+  are taken from.
+- Coordinate 0 is when the arm (and colour sensor) is directly in line with
+  the first block.
+ */
 import ShefRobot.*;
 
 public class CoordinateManager {
     public static RobotMover mover = new RobotMover();
     // current x coordinate
     public static int x = 0;
+
+    public static int DISTANCE_BETWEEN_BLOCKS = 20;
 
     /**
      * Go to a given place on the coordinate grid.
