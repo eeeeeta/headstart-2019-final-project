@@ -17,7 +17,10 @@ public class RobotMover {
         spinMotor = robot.getMediumMotor(Motor.Port.C);
         sensor = robot.getColorSensor(Sensor.Port.S1);
 
+        spinMotor.setSpeed(100);
+        armMotor.setSpeed(100);
         armMotor.rotateTo(90);
+        spinMotor.rotateTo(90);
     }
 
     /**
@@ -55,13 +58,12 @@ public class RobotMover {
      * next to the robot.
      */
     public static void swap() {
-        armMotor.rotateTo(-90);
-        Delay.msDelay(2000);
-        spinMotor.rotateTo(270);
-        Delay.msDelay(2000);
-        spinMotor.rotateTo(-90);
-        Delay.msDelay(2000);
+        armMotor.rotateTo(0);
+        spinMotor.rotate(-270);
+        spinMotor.rotate(90);
         armMotor.rotateTo(90);
+        spinMotor.rotate(180);
+        spinMotor.rotateTo(90);
     }
     /**
      * Detect the colour currently next to the robot.
