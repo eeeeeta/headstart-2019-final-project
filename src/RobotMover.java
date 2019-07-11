@@ -2,6 +2,16 @@ import ShefRobot.*;
 
 public class RobotMover {
     public static Robot robot;
+    public static ColorSensor sensor;
+    public static Motor driveMotor;
+    public static Motor armMotor;
+
+    public static void init() {
+        robot = new Robot("G7");
+        driveMotor = robot.getLargeMotor(Motor.Port.A);
+        armMotor = robot.getLargeMotor(Motor.Port.B);
+        sensor = robot.getColorSensor(Sensor.Port.S1);
+    }
 
     /**
      * Moves forward by `distance` units.
@@ -31,6 +41,6 @@ public class RobotMover {
      * @return the detected colour
      */
     public static ColorSensor.Color detectColor() {
-        throw new Error(); // not yet implemented
+        return sensor.getColor();
     }
 }
