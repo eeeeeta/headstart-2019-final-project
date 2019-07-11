@@ -14,7 +14,25 @@ public class Sorter {
      *
      * @param block_order Which order the blocks are in.
      */
-    public static void sortBlocks(int[] block_order) {
+    public static void sortBlocks(int[] blockOrder) {
 
+        //take int array of unsorted numbers
+        //loop for every pass
+        //in each loop compare item and item after
+        //temp variable to switch values
+
+        while (true) {
+            int switches = 0;
+
+            for (int i = 0; i<3; i++) {
+
+
+
+
+            }
+        }
+
+
+        //output is loop calling blockswitcher for each switch
     }
 }
