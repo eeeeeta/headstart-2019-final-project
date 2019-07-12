@@ -16,13 +16,16 @@ public class RobotMover {
         armMotor = robot.getLargeMotor(Motor.Port.B);
         spinMotor = robot.getMediumMotor(Motor.Port.C);
         sensor = robot.getColorSensor(Sensor.Port.S1);
-        driveMotor.setSpeed(50);
+        driveMotor.setSpeed(75);
         spinMotor.setSpeed(100);
         armMotor.setSpeed(100);
         spinMotor.rotateTo(90);
         armMotor.rotateTo(90);
     }
-
+    public static void die_elegantly() {
+        spinMotor.rotateTo(0);
+        armMotor.rotateTo(0);
+    }
     /**
      * Moves forward by `distance` units.
      *

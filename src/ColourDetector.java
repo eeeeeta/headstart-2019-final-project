@@ -15,7 +15,7 @@ public class ColourDetector {
         int[] ret = new int[4];
         RobotMover.spinMotor.rotateTo(-90);
         for (int i = 0; i < 4; i++) {
-            double pos = CoordinateManager.Blocks[i];
+            double pos = CoordinateManager.Blocks[i] - 5;
             int j = 0;
             for (; j < 10; j++) {
                 int col = 0;
@@ -30,7 +30,7 @@ public class ColourDetector {
                     pos += 1.0;
                 }
             }
-            if (j == 5) {
+            if (j == 10) {
                 throw new Error("* Failed to find colour");
             }
         }

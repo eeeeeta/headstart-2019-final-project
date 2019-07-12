@@ -15,8 +15,6 @@ public class CoordinateManager {
     public static double Blocks[] = {16.55,26.65,36.75,46.85};
     public static double Mids[] = {21.6,31.7,41.8};
 
-    public static double DISTANCE_BETWEEN_BLOCKS = 10.1;
-
     /**
      * Go to a given place on the coordinate grid.
      * @param newX x coordinate to move to
@@ -35,7 +33,7 @@ public class CoordinateManager {
                mover.forward(DistanceTo);
             }
             else if (DistanceTo < 0) {
-                mover.backward(DistanceTo);
+                mover.backward(-DistanceTo);
         }
     }
 }
